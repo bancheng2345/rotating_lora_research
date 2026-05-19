@@ -1,0 +1,15 @@
+lora:
+  method: pc_lora
+  target_layers: [0, 8, 16, 24]
+  left_projection_source: none
+  right_projection_source: svd
+  use_left_projection: false
+  use_right_projection: true
+  use_capture_loss: true
+  capture_space: residual
+  capture_weighting: none
+  lambda_cap: 0.05
+  lambda_orth: 0.01
+
+experiment:
+  notes: SVD-right PC-LoRA matched to M_WA probe layers

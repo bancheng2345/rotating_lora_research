@@ -1,0 +1,20 @@
+training:
+  max_steps: 300
+  max_train_samples: null
+  max_eval_samples: 5000
+  # Keep effective batch size at 8 while using more of the 80GB A800 memory.
+  batch_size: 4
+  eval_batch_size: 4
+  grad_accum_steps: 2
+  logging_steps: 10
+  eval_steps: 50
+  save_steps: 50
+  gradient_checkpointing: true
+
+metrics:
+  logging_steps: 10
+  eval_steps: 50
+  mechanism_steps: 50
+
+experiment:
+  notes: MetaMathQA 8B full preset, microbatch 4

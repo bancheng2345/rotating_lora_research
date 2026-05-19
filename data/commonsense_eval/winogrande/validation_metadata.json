@@ -1,0 +1,9 @@
+{
+  "task": "winogrande",
+  "split": "validation",
+  "dataset_name": "winogrande",
+  "dataset_config": "winogrande_xl",
+  "num_examples": 1267,
+  "num_skipped": 0,
+  "output_path": "data/commonsense_eval/winogrande/validation.jsonl"
+}

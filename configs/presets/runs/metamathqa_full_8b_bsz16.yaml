@@ -1,0 +1,21 @@
+training:
+  max_steps: 300
+  max_train_samples: null
+  max_eval_samples: 5000
+  # Larger-batch throughput run. Effective batch is 16, so compare separately
+  # from the earlier effective-batch-8 results.
+  batch_size: 16
+  eval_batch_size: 16
+  grad_accum_steps: 1
+  logging_steps: 10
+  eval_steps: 50
+  save_steps: 50
+  gradient_checkpointing: true
+
+metrics:
+  logging_steps: 10
+  eval_steps: 50
+  mechanism_steps: 50
+
+experiment:
+  notes: MetaMathQA 8B full preset, microbatch 16

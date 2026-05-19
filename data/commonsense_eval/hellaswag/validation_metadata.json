@@ -1,0 +1,9 @@
+{
+  "task": "hellaswag",
+  "split": "validation",
+  "dataset_name": "hellaswag",
+  "dataset_config": null,
+  "num_examples": 10042,
+  "num_skipped": 0,
+  "output_path": "data/commonsense_eval/hellaswag/validation.jsonl"
+}

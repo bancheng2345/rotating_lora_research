@@ -1,0 +1,42 @@
+model:
+  init_from_scratch: false
+  name_or_path: /data/zck/code/models/models--meta-llama--Llama-3.2-1B/snapshots/4e20de362430cd3b72f300e6b0f18e50e7166e08
+  tokenizer_name_or_path: /data/zck/code/models/models--meta-llama--Llama-3.2-1B/snapshots/4e20de362430cd3b72f300e6b0f18e50e7166e08
+  local_files_only: true
+  torch_dtype: bf16
+  attn_impl: eager
+
+lora:
+  method: pc_lora
+  use_left_projection: true
+  use_right_projection: true
+  use_capture_loss: true
+  capture_space: residual
+  capture_weighting: none
+  lambda_cap: 0.05
+  lambda_orth: 0.01
+
+training:
+  dataset_name: math500_local
+  train_file: data/splits/math500_train_450.jsonl
+  eval_file: data/splits/math500_val_50.jsonl
+  prompt_column: question
+  response_column: answer
+  prompt_template: "Question:\n{question}\n\nAnswer:\n"
+  response_template: "{answer}"
+  train_on_prompt: false
+  eval_metric_name: exact_match
+  eval_metric_mode: max
+  seq_length: 256
+  max_steps: 20
+  max_train_samples: 64
+  max_eval_samples: 16
+  batch_size: 1
+  eval_batch_size: 1
+  grad_accum_steps: 8
+  logging_steps: 1
+  eval_steps: 10
+  save_steps: 20
+
+experiment:
+  notes: Math500 Llama-3.2-1B PC-LoRA dry run recipe

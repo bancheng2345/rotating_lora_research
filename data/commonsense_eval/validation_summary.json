@@ -1,0 +1,74 @@
+[
+  {
+    "task": "boolq",
+    "split": "validation",
+    "dataset_name": "google/boolq",
+    "dataset_config": null,
+    "num_examples": 3270,
+    "num_skipped": 0,
+    "output_path": "data/commonsense_eval/boolq/validation.jsonl"
+  },
+  {
+    "task": "piqa",
+    "split": "validation",
+    "dataset_name": "piqa",
+    "dataset_config": null,
+    "num_examples": 1838,
+    "num_skipped": 0,
+    "output_path": "data/commonsense_eval/piqa/validation.jsonl"
+  },
+  {
+    "task": "siqa",
+    "split": "validation",
+    "dataset_name": "social_i_qa",
+    "dataset_config": null,
+    "num_examples": 1954,
+    "num_skipped": 0,
+    "output_path": "data/commonsense_eval/siqa/validation.jsonl"
+  },
+  {
+    "task": "hellaswag",
+    "split": "validation",
+    "dataset_name": "hellaswag",
+    "dataset_config": null,
+    "num_examples": 10042,
+    "num_skipped": 0,
+    "output_path": "data/commonsense_eval/hellaswag/validation.jsonl"
+  },
+  {
+    "task": "winogrande",
+    "split": "validation",
+    "dataset_name": "winogrande",
+    "dataset_config": "winogrande_xl",
+    "num_examples": 1267,
+    "num_skipped": 0,
+    "output_path": "data/commonsense_eval/winogrande/validation.jsonl"
+  },
+  {
+    "task": "arc_e",
+    "split": "validation",
+    "dataset_name": "ai2_arc",
+    "dataset_config": "ARC-Easy",
+    "num_examples": 570,
+    "num_skipped": 0,
+    "output_path": "data/commonsense_eval/arc_e/validation.jsonl"
+  },
+  {
+    "task": "arc_c",
+    "split": "validation",
+    "dataset_name": "ai2_arc",
+    "dataset_config": "ARC-Challenge",
+    "num_examples": 299,
+    "num_skipped": 0,
+    "output_path": "data/commonsense_eval/arc_c/validation.jsonl"
+  },
+  {
+    "task": "obqa",
+    "split": "validation",
+    "dataset_name": "openbookqa",
+    "dataset_config": "main",
+    "num_examples": 500,
+    "num_skipped": 0,
+    "output_path": "data/commonsense_eval/obqa/validation.jsonl"
+  }
+]

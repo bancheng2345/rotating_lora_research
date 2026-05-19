@@ -1,0 +1,55 @@
+runtime:
+  conda_env: torch2.7
+  gpu:
+    mode: prefer_pcie
+    cuda_visible_devices: auto
+    fallback_cuda_visible_devices: "0"
+    override_env: CUDA_VISIBLE_DEVICES
+
+model:
+  name_or_path: "gpt2"
+  tokenizer_name_or_path: "gpt2"
+  local_files_only: false
+  init_from_scratch: false
+  architecture: gpt2
+  torch_dtype: "float32"
+  device: "cuda"
+
+data:
+  source: "text_list"
+  text_list:
+    - "The quick brown fox jumps over the lazy dog."
+    - "Large language models require efficient adaptation."
+    - "Activation covariance can reveal frequently used directions."
+  max_samples: 32
+  max_seq_len: 128
+  batch_size: 4
+
+targets:
+  layers: [0]
+  modules: ["c_attn"]
+  layer_selection: "explicit"
+  last_n: 1
+
+collector:
+  chunk_tokens: 2048
+
+covariance:
+  centered: false
+  top_k_values: [4, 8, 16, 32]
+  max_tokens: 2048
+  dtype_for_cov: "float32"
+
+svd:
+  use_lowrank: false
+  top_k_values: [4, 8, 16, 32]
+
+output:
+  run_name: "smoke_gpt2"
+  root_dir: "activation_cov_experiment/outputs"
+
+metrics:
+  compute_principal_angles: true
+  compute_capture_energy: true
+  compute_random_baseline: true
+  random_trials: 3

@@ -1,0 +1,22 @@
+training:
+  max_steps: 300
+  max_train_samples: null
+  max_eval_samples: 5000
+  # Training microbatch 16 uses the available 80GB A800 much more aggressively.
+  # Eval batch 16 OOMs on this model/seq_len, so keep eval at 8 to complete all
+  # metrics reliably.
+  batch_size: 16
+  eval_batch_size: 8
+  grad_accum_steps: 1
+  logging_steps: 10
+  eval_steps: 50
+  save_steps: 50
+  gradient_checkpointing: true
+
+metrics:
+  logging_steps: 10
+  eval_steps: 50
+  mechanism_steps: 50
+
+experiment:
+  notes: MetaMathQA 8B full preset, train microbatch 16 eval microbatch 8

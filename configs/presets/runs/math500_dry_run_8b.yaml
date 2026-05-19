@@ -1,0 +1,19 @@
+training:
+  max_steps: 20
+  max_train_samples: 64
+  max_eval_samples: 16
+  batch_size: 1
+  eval_batch_size: 1
+  grad_accum_steps: 8
+  logging_steps: 1
+  eval_steps: 10
+  save_steps: 20
+  gradient_checkpointing: true
+
+metrics:
+  logging_steps: 1
+  eval_steps: 10
+  mechanism_steps: 10
+
+experiment:
+  notes: Math500 8B dry run preset

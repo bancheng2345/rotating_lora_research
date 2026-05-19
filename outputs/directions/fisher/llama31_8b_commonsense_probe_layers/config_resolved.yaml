@@ -1,0 +1,162 @@
+runtime:
+  conda_env: torch2.7
+  gpu:
+    mode: prefer_sxm4
+    cuda_visible_devices: '0'
+    fallback_cuda_visible_devices: '0'
+    override_env: CUDA_VISIBLE_DEVICES
+  cache:
+    hf_home: outputs/cache/huggingface
+    hf_datasets_cache: outputs/cache/hf_datasets
+    transformers_cache: outputs/cache/transformers
+model:
+  name_or_path: /data/zck/code/models/models--meta-llama--Llama-3.1-8B/snapshots/d04e592bb4f6aa9cfee91e2e20afa771667e1d4b
+  tokenizer_name_or_path: /data/zck/code/models/models--meta-llama--Llama-3.1-8B/snapshots/d04e592bb4f6aa9cfee91e2e20afa771667e1d4b
+  init_from_scratch: false
+  synthetic_name: tiny_llama
+  architecture: llama
+  vocab_size: 128
+  hidden_size: 128
+  intermediate_size: 256
+  num_hidden_layers: 2
+  num_attention_heads: 4
+  num_key_value_heads: 4
+  max_position_embeddings: 128
+  pad_token_id: 0
+  bos_token_id: 1
+  eos_token_id: 2
+  attention_dropout: 0.0
+  target_modules:
+  - q_proj
+  - v_proj
+  torch_dtype: bf16
+  attn_impl: eager
+  local_files_only: true
+lora:
+  method: fisher_oplora
+  rank: 8
+  alpha: 16
+  dropout: 0.05
+  projection_rank_k: 16
+  left_projection_source: none
+  right_projection_source: fisher
+  use_left_projection: false
+  use_right_projection: true
+  use_capture_loss: false
+  capture_space: residual
+  capture_weighting: none
+  capture_layers: all
+  lambda_cap: 0.0
+  lambda_orth: 0.01
+  use_output_capture: false
+  detach_capture_inputs: true
+  cache_svd: true
+  svd_cache_dir: outputs/cache/svd
+  enforce_projection_rank: clip
+  eps: 1.0e-06
+  target_layers:
+  - 0
+  - 8
+  - 16
+  - 24
+  projection_basis_dir: outputs/directions/fisher/llama31_8b_commonsense_probe_layers
+training:
+  dataset_name: commonsense_170k_local
+  dataset_config_name: null
+  train_file: data/splits/commonsense_170k_train_165420.jsonl
+  eval_file: data/splits/commonsense_170k_val_5000.jsonl
+  text_column: text
+  input_ids_column: input_ids
+  prompt_column: instruction
+  response_column: answer
+  prompt_template: '{prompt}
+
+    '
+  response_template: '{answer}'
+  train_on_prompt: false
+  min_response_tokens: 16
+  domain: commonsense
+  eval_domain: commonsense
+  task_type: causal_lm
+  eval_metric_name: exact_match
+  eval_metric_mode: max
+  train_split: train
+  eval_split: validation
+  seq_length: 192
+  synthetic_train_samples: 128
+  synthetic_eval_samples: 32
+  max_train_samples: 128
+  max_eval_samples: 1
+  max_steps: 300
+  batch_size: 1
+  eval_batch_size: 1
+  grad_accum_steps: 8
+  learning_rate: 0.0002
+  max_grad_norm: null
+  warmup_ratio: 0.03
+  weight_decay: 0.0
+  logging_steps: 10
+  eval_steps: 50
+  save_steps: 50
+  gradient_checkpointing: true
+metrics:
+  log_train: true
+  log_eval: true
+  log_forgetting: true
+  log_mechanism: true
+  log_efficiency: true
+  logging_steps: 10
+  eval_steps: 50
+  mechanism_steps: 50
+  compute_rho_k: true
+  rho_k_values:
+  - 8
+  - 16
+  - 32
+  - 64
+  - 128
+  rho_max_layers: 4
+  compute_omega: true
+  omega_capture_layers: last_quarter
+  omega_use_residual: true
+  omega_use_full: true
+  compute_orth_error: true
+  compute_update_norms: true
+  compute_efficiency: true
+  save_jsonl: true
+  save_final_summary: true
+forgetting_eval:
+  enabled: true
+  train_domain: null
+  eval_domains: []
+  base_model_scores_path: null
+efficiency:
+  track_gpu_memory: true
+  track_step_time: true
+  track_metric_overhead: true
+experiment:
+  output_dir: outputs/runs/{model_dir}/{method}_{model}_{dataset}_r{rank}_k{k}_seed{seed}_{timestamp}
+  seed: 0
+  notes: Empirical-Fisher right-projected OPLoRA matched to probe layers
+projection_directions:
+  output_dir: outputs/directions/fisher/llama31_8b_commonsense_probe_layers
+  target_layers:
+  - 0
+  - 8
+  - 16
+  - 24
+  target_modules:
+  - q_proj
+  - v_proj
+  top_k_values:
+  - 4
+  - 8
+  - 16
+  - 32
+  max_samples: 128
+  batch_size: 1
+  max_batches: 32
+  max_tokens: 4096
+  eig_method: randomized
+  oversample: 8
+  power_iterations: 2

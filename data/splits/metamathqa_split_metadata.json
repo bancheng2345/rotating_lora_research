@@ -1,0 +1,15 @@
+{
+  "seed": 42,
+  "source_file": "/data/zck/code/rotating_lora_research/data/MetaMathQA/MetaMathQA-395K.json",
+  "total_rows": 395000,
+  "train_path": "/data/zck/code/rotating_lora_research/data/splits/metamathqa_train_100000.jsonl",
+  "train_rows": 100000,
+  "val_path": "/data/zck/code/rotating_lora_research/data/splits/metamathqa_val_5000.jsonl",
+  "val_rows": 5000,
+  "columns": [
+    "original_question",
+    "query",
+    "response",
+    "type"
+  ]
+}

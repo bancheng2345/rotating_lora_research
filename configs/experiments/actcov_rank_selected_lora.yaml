@@ -1,0 +1,31 @@
+lora:
+  method: actcov_rank_lora
+  target_layers: [0, 8, 16, 24]
+  rank: 8
+  alpha: 16
+  alpha_strategy: rank_scaled
+  alpha_multiplier: 2.0
+  # ActivationCov direction-comparison showed v_proj has the largest gap
+  # between activation-energy directions and SVD directions. Allocate more
+  # rank to v_proj while keeping total parameters close to matched rank-8 LoRA.
+  rank_pattern:
+    model.layers.0.self_attn.q_proj: 4
+    model.layers.8.self_attn.q_proj: 4
+    model.layers.16.self_attn.q_proj: 4
+    model.layers.24.self_attn.q_proj: 4
+    model.layers.0.self_attn.v_proj: 14
+    model.layers.8.self_attn.v_proj: 14
+    model.layers.16.self_attn.v_proj: 14
+    model.layers.24.self_attn.v_proj: 14
+  left_projection_source: none
+  right_projection_source: none
+  use_left_projection: false
+  use_right_projection: false
+  use_capture_loss: false
+  capture_space: full
+  capture_weighting: none
+  lambda_cap: 0.0
+  lambda_orth: 0.01
+
+experiment:
+  notes: ActivationCov rank-selected LoRA, q rank 4, v rank 14

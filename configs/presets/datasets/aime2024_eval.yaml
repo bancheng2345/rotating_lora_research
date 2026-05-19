@@ -1,0 +1,20 @@
+training:
+  dataset_name: aime2024_local_eval
+  eval_file: data/aime2024.jsonl
+  domain: math
+  eval_domain: math
+  task_type: causal_lm
+  eval_metric_name: exact_match
+  eval_metric_mode: max
+  prompt_column: question
+  response_column: answer
+  prompt_template: "Question:\n{question}\n\nAnswer:\n"
+  response_template: "{answer}"
+  train_on_prompt: false
+  seq_length: 256
+
+experiment:
+  notes: AIME2024 eval preset
+
+forgetting_eval:
+  enabled: true

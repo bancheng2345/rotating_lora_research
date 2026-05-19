@@ -1,0 +1,176 @@
+{
+  "source": "fisher",
+  "output_dir": "outputs/directions/fisher/llama31_8b_commonsense_probe_layers",
+  "model_name_or_path": "/data/zck/code/models/models--meta-llama--Llama-3.1-8B/snapshots/d04e592bb4f6aa9cfee91e2e20afa771667e1d4b",
+  "num_modules": 8,
+  "processed_batches": 32,
+  "loss_mean": 4.066549867391586,
+  "top_k_values": [
+    4,
+    8,
+    16,
+    32
+  ],
+  "eig_method": "randomized",
+  "targets": [
+    {
+      "module_name": "model.layers.0.self_attn.q_proj",
+      "module_key": "model_layers_0_self_attn_q_proj",
+      "count": 2524,
+      "rank": 32,
+      "right_weight_sum": 2.500006515532732,
+      "left_weight_sum": 190345.28515625,
+      "top_right_eigenvalues": [
+        25.843812942504883,
+        17.619518280029297,
+        8.740887641906738,
+        4.64104700088501,
+        4.232347011566162,
+        3.7832748889923096,
+        3.559063673019409,
+        1.7902857065200806
+      ]
+    },
+    {
+      "module_name": "model.layers.0.self_attn.v_proj",
+      "module_key": "model_layers_0_self_attn_v_proj",
+      "count": 2524,
+      "rank": 32,
+      "right_weight_sum": 2195.4704456329346,
+      "left_weight_sum": 190345.28515625,
+      "top_right_eigenvalues": [
+        28.407127380371094,
+        10.467504501342773,
+        6.743021011352539,
+        5.721368312835693,
+        4.9018354415893555,
+        2.7854106426239014,
+        2.0116426944732666,
+        1.2547080516815186
+      ]
+    },
+    {
+      "module_name": "model.layers.8.self_attn.q_proj",
+      "module_key": "model_layers_8_self_attn_q_proj",
+      "count": 2524,
+      "rank": 32,
+      "right_weight_sum": 3.2167923636734486,
+      "left_weight_sum": 1923146.86328125,
+      "top_right_eigenvalues": [
+        296.43792724609375,
+        63.78386306762695,
+        38.43120193481445,
+        31.945520401000977,
+        29.737077713012695,
+        21.033777236938477,
+        17.540342330932617,
+        15.464836120605469
+      ]
+    },
+    {
+      "module_name": "model.layers.8.self_attn.v_proj",
+      "module_key": "model_layers_8_self_attn_v_proj",
+      "count": 2524,
+      "rank": 32,
+      "right_weight_sum": 130.7652895450592,
+      "left_weight_sum": 1923146.86328125,
+      "top_right_eigenvalues": [
+        79.20049285888672,
+        20.84491729736328,
+        4.079791069030762,
+        3.1856772899627686,
+        2.9142000675201416,
+        2.746647834777832,
+        2.251793622970581,
+        1.8867790699005127
+      ]
+    },
+    {
+      "module_name": "model.layers.16.self_attn.q_proj",
+      "module_key": "model_layers_16_self_attn_q_proj",
+      "count": 2524,
+      "rank": 32,
+      "right_weight_sum": 2.3230911158025265,
+      "left_weight_sum": 2318011.72265625,
+      "top_right_eigenvalues": [
+        446.8124084472656,
+        110.59232330322266,
+        58.43397903442383,
+        49.74233627319336,
+        35.21706008911133,
+        26.480159759521484,
+        24.442481994628906,
+        19.007848739624023
+      ]
+    },
+    {
+      "module_name": "model.layers.16.self_attn.v_proj",
+      "module_key": "model_layers_16_self_attn_v_proj",
+      "count": 2524,
+      "rank": 32,
+      "right_weight_sum": 52.65148448944092,
+      "left_weight_sum": 2318011.72265625,
+      "top_right_eigenvalues": [
+        50.87760543823242,
+        31.658323287963867,
+        11.080071449279785,
+        5.55997371673584,
+        4.486724376678467,
+        3.4076054096221924,
+        2.7160449028015137,
+        2.5317294597625732
+      ]
+    },
+    {
+      "module_name": "model.layers.24.self_attn.q_proj",
+      "module_key": "model_layers_24_self_attn_q_proj",
+      "count": 2524,
+      "rank": 32,
+      "right_weight_sum": 2.00344349257648,
+      "left_weight_sum": 2591836.85546875,
+      "top_right_eigenvalues": [
+        526.1818237304688,
+        158.0399169921875,
+        72.79679107666016,
+        43.02103042602539,
+        31.00120735168457,
+        24.374221801757812,
+        16.18308448791504,
+        14.376115798950195
+      ]
+    },
+    {
+      "module_name": "model.layers.24.self_attn.v_proj",
+      "module_key": "model_layers_24_self_attn_v_proj",
+      "count": 2524,
+      "rank": 32,
+      "right_weight_sum": 37.984942734241486,
+      "left_weight_sum": 2591836.85546875,
+      "top_right_eigenvalues": [
+        39.861026763916016,
+        15.582749366760254,
+        4.635033130645752,
+        4.511817455291748,
+        1.6596497297286987,
+        1.5406938791275024,
+        1.2487924098968506,
+        1.0164374113082886
+      ]
+    }
+  ],
+  "gpu_selection": {
+    "visible_devices": "0",
+    "mode": "prefer_sxm4",
+    "reason": "manual_override",
+    "detected_gpus": [
+      {
+        "index": "0",
+        "name": "NVIDIA A800 80GB PCIe"
+      },
+      {
+        "index": "1",
+        "name": "NVIDIA A800-SXM4-80GB"
+      }
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+training:
+  dataset_name: commonsense_170k_local
+  train_file: data/splits/commonsense_170k_train_165420.jsonl
+  eval_file: data/splits/commonsense_170k_val_5000.jsonl
+  domain: commonsense
+  eval_domain: commonsense
+  task_type: causal_lm
+  eval_metric_name: exact_match
+  eval_metric_mode: max
+  prompt_column: instruction
+  response_column: answer
+  prompt_template: "{prompt}\n"
+  response_template: "{answer}"
+  train_on_prompt: false
+  seq_length: 192
+
+experiment:
+  notes: Commonsense170k local split preset

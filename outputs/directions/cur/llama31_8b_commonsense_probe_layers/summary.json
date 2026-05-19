@@ -1,0 +1,261 @@
+{
+  "source": "cur",
+  "output_dir": "outputs/directions/cur/llama31_8b_commonsense_probe_layers",
+  "model_name_or_path": "/data/zck/code/models/models--meta-llama--Llama-3.1-8B/snapshots/d04e592bb4f6aa9cfee91e2e20afa771667e1d4b",
+  "num_modules": 8,
+  "top_k_values": [
+    4,
+    8,
+    16,
+    32
+  ],
+  "targets": [
+    {
+      "module_name": "model.layers.0.self_attn.q_proj",
+      "module_key": "model_layers_0_self_attn_q_proj",
+      "shape": [
+        4096,
+        4096
+      ],
+      "rank": 32,
+      "selected_rows_head": [
+        39,
+        295,
+        360,
+        362,
+        1511,
+        1259,
+        104,
+        423
+      ],
+      "selected_columns_head": [
+        2871,
+        2650,
+        3303,
+        565,
+        2082,
+        1727,
+        891,
+        1669
+      ]
+    },
+    {
+      "module_name": "model.layers.0.self_attn.v_proj",
+      "module_key": "model_layers_0_self_attn_v_proj",
+      "shape": [
+        1024,
+        4096
+      ],
+      "rank": 32,
+      "selected_rows_head": [
+        626,
+        833,
+        873,
+        600,
+        632,
+        382,
+        607,
+        623
+      ],
+      "selected_columns_head": [
+        1919,
+        3885,
+        4041,
+        1968,
+        3651,
+        3858,
+        2874,
+        2916
+      ]
+    },
+    {
+      "module_name": "model.layers.8.self_attn.q_proj",
+      "module_key": "model_layers_8_self_attn_q_proj",
+      "shape": [
+        4096,
+        4096
+      ],
+      "rank": 32,
+      "selected_rows_head": [
+        250,
+        177,
+        248,
+        191,
+        240,
+        241,
+        175,
+        183
+      ],
+      "selected_columns_head": [
+        3291,
+        175,
+        2528,
+        2303,
+        281,
+        2116,
+        2720,
+        2692
+      ]
+    },
+    {
+      "module_name": "model.layers.8.self_attn.v_proj",
+      "module_key": "model_layers_8_self_attn_v_proj",
+      "shape": [
+        1024,
+        4096
+      ],
+      "rank": 32,
+      "selected_rows_head": [
+        818,
+        837,
+        780,
+        786,
+        892,
+        887,
+        874,
+        878
+      ],
+      "selected_columns_head": [
+        641,
+        2128,
+        1311,
+        224,
+        1069,
+        104,
+        2239,
+        1885
+      ]
+    },
+    {
+      "module_name": "model.layers.16.self_attn.q_proj",
+      "module_key": "model_layers_16_self_attn_q_proj",
+      "shape": [
+        4096,
+        4096
+      ],
+      "rank": 32,
+      "selected_rows_head": [
+        2613,
+        2614,
+        2677,
+        2622,
+        2682,
+        2611,
+        2679,
+        2684
+      ],
+      "selected_columns_head": [
+        1384,
+        788,
+        4062,
+        2303,
+        3070,
+        2116,
+        2692,
+        175
+      ]
+    },
+    {
+      "module_name": "model.layers.16.self_attn.v_proj",
+      "module_key": "model_layers_16_self_attn_v_proj",
+      "shape": [
+        1024,
+        4096
+      ],
+      "rank": 32,
+      "selected_rows_head": [
+        429,
+        430,
+        406,
+        421,
+        471,
+        467,
+        466,
+        507
+      ],
+      "selected_columns_head": [
+        4043,
+        2058,
+        2069,
+        2185,
+        1985,
+        212,
+        2960,
+        2005
+      ]
+    },
+    {
+      "module_name": "model.layers.24.self_attn.q_proj",
+      "module_key": "model_layers_24_self_attn_q_proj",
+      "shape": [
+        4096,
+        4096
+      ],
+      "rank": 32,
+      "selected_rows_head": [
+        2874,
+        4006,
+        3190,
+        3622,
+        2297,
+        2613,
+        3255,
+        2418
+      ],
+      "selected_columns_head": [
+        788,
+        1384,
+        2303,
+        2692,
+        4062,
+        1338,
+        2528,
+        1162
+      ]
+    },
+    {
+      "module_name": "model.layers.24.self_attn.v_proj",
+      "module_key": "model_layers_24_self_attn_v_proj",
+      "shape": [
+        1024,
+        4096
+      ],
+      "rank": 32,
+      "selected_rows_head": [
+        134,
+        222,
+        243,
+        189,
+        166,
+        229,
+        169,
+        239
+      ],
+      "selected_columns_head": [
+        2069,
+        2960,
+        1122,
+        1296,
+        4043,
+        3553,
+        2058,
+        2283
+      ]
+    }
+  ],
+  "gpu_selection": {
+    "visible_devices": "0",
+    "mode": "prefer_sxm4",
+    "reason": "manual_override",
+    "detected_gpus": [
+      {
+        "index": "0",
+        "name": "NVIDIA A800 80GB PCIe"
+      },
+      {
+        "index": "1",
+        "name": "NVIDIA A800-SXM4-80GB"
+      }
+    ]
+  }
+}

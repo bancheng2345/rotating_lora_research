@@ -1,0 +1,21 @@
+training:
+  max_steps: 300
+  max_train_samples: null
+  max_eval_samples: 5000
+  # Larger-batch SDPA run. Effective batch is 12, so compare separately from
+  # the earlier effective-batch-8 and effective-batch-16 runs.
+  batch_size: 12
+  eval_batch_size: 12
+  grad_accum_steps: 1
+  logging_steps: 10
+  eval_steps: 50
+  save_steps: 50
+  gradient_checkpointing: true
+
+metrics:
+  logging_steps: 10
+  eval_steps: 50
+  mechanism_steps: 50
+
+experiment:
+  notes: MetaMathQA 8B full preset, microbatch 12

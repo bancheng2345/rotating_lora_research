@@ -1,0 +1,19 @@
+training:
+  max_steps: 100
+  max_train_samples: null
+  max_eval_samples: 50
+  batch_size: 1
+  eval_batch_size: 1
+  grad_accum_steps: 8
+  logging_steps: 10
+  eval_steps: 25
+  save_steps: 25
+  gradient_checkpointing: true
+
+metrics:
+  logging_steps: 10
+  eval_steps: 25
+  mechanism_steps: 25
+
+experiment:
+  notes: Math500 8B full preset

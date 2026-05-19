@@ -1,0 +1,9 @@
+{
+  "task": "obqa",
+  "split": "validation",
+  "dataset_name": "openbookqa",
+  "dataset_config": "main",
+  "num_examples": 500,
+  "num_skipped": 0,
+  "output_path": "data/commonsense_eval/obqa/validation.jsonl"
+}

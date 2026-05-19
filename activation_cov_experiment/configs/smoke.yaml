@@ -1,0 +1,52 @@
+runtime:
+  gpu:
+    mode: prefer_pcie
+
+model:
+  init_from_scratch: true
+  architecture: gpt2
+  synthetic_name: scratch_gpt2_smoke
+  torch_dtype: "float32"
+  device: "cuda"
+  vocab_size: 259
+  hidden_size: 64
+  num_hidden_layers: 2
+  num_attention_heads: 4
+  max_position_embeddings: 128
+
+data:
+  source: "text_list"
+  text_list:
+    - "The quick brown fox jumps over the lazy dog."
+    - "Activation covariance can reveal frequently used directions."
+    - "Weight SVD only sees static weight geometry."
+    - "We want to compare capture energy under real activations."
+    - "Principal angles measure subspace mismatch."
+    - "Random baselines should capture less energy than informed directions."
+  max_samples: 6
+  max_seq_len: 64
+  batch_size: 2
+
+targets:
+  layers: [0]
+  modules: ["c_attn"]
+  layer_selection: "explicit"
+
+collector:
+  chunk_tokens: 512
+
+covariance:
+  centered: false
+  top_k_values: [4, 8, 16]
+  max_tokens: 512
+  dtype_for_cov: "float32"
+
+svd:
+  use_lowrank: false
+  top_k_values: [4, 8, 16]
+
+output:
+  run_name: "smoke_scratch_gpt2"
+
+metrics:
+  random_trials: 2

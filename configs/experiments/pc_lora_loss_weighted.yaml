@@ -1,0 +1,18 @@
+lora:
+  method: pc_lora_weighted
+  use_left_projection: true
+  use_right_projection: true
+  use_capture_loss: true
+  capture_space: residual
+  capture_weighting: loss
+  capture_loss_weight_clip_max: 5.0
+  capture_loss_weight_normalize_by: 5.0
+  lambda_cap: 0.05
+  lambda_orth: 0.01
+
+training:
+  learning_rate: 5.0e-5
+  max_grad_norm: 0.5
+
+experiment:
+  notes: PC-LoRA loss-weighted residual capture

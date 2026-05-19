@@ -1,0 +1,16 @@
+lora:
+  method: actcov_pc_lora
+  target_layers: [0, 8, 16, 24]
+  left_projection_source: none
+  right_projection_source: activation_cov
+  activation_cov_dir: activation_cov_experiment/outputs/directions/llama31_8b_commonsense_probe_gpu1/activation_cov
+  use_left_projection: false
+  use_right_projection: true
+  use_capture_loss: true
+  capture_space: residual
+  capture_weighting: none
+  lambda_cap: 0.05
+  lambda_orth: 0.01
+
+experiment:
+  notes: ActivationCov PC-LoRA residual capture matched to probe layers

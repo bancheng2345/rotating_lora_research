@@ -1,0 +1,41 @@
+# Python/cache artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local editor/agent state
+.claude/
+.codex
+.agents/
+.vscode/
+.git_external/
+
+# Runtime logs and temporary files
+*.log
+*.tmp
+*.bak
+
+# Model and experiment artifacts
+outputs/cache/
+outputs/runs/
+outputs/cache_*/
+outputs/**/*.pt
+outputs/**/*.bin
+outputs/**/*.safetensors
+outputs/**/*.arrow
+
+# Activation covariance generated artifacts are reproducible and can be very large.
+activation_cov_experiment/outputs/
+
+# Large raw downloaded datasets. Keep split metadata/eval files in git instead.
+data/MetaMathQA/MetaMathQA-395K.json
+data/**/.cache/
+data/**/*.arrow
+
+# Checkpoints/adapters, wherever they are written.
+checkpoints/
+**/checkpoints/
+**/adapter*.pt
+**/*checkpoint*.pt

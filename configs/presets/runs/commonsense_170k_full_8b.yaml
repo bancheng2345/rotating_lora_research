@@ -1,0 +1,19 @@
+training:
+  max_steps: 300
+  max_train_samples: null
+  max_eval_samples: 5000
+  batch_size: 1
+  eval_batch_size: 1
+  grad_accum_steps: 8
+  logging_steps: 10
+  eval_steps: 50
+  save_steps: 50
+  gradient_checkpointing: true
+
+metrics:
+  logging_steps: 10
+  eval_steps: 50
+  mechanism_steps: 50
+
+experiment:
+  notes: Commonsense170k 8B full run preset

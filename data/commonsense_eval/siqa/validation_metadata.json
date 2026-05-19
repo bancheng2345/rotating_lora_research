@@ -1,0 +1,9 @@
+{
+  "task": "siqa",
+  "split": "validation",
+  "dataset_name": "social_i_qa",
+  "dataset_config": null,
+  "num_examples": 1954,
+  "num_skipped": 0,
+  "output_path": "data/commonsense_eval/siqa/validation.jsonl"
+}

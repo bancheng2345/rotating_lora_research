@@ -1,0 +1,19 @@
+training:
+  dataset_name: metamathqa_local
+  train_file: data/splits/metamathqa_train_100000.jsonl
+  eval_file: data/splits/metamathqa_val_5000.jsonl
+  domain: math
+  eval_domain: math
+  task_type: causal_lm
+  eval_metric_name: exact_match
+  eval_metric_mode: max
+  prompt_column: query
+  response_column: response
+  prompt_template: "Question:\n{question}\n\nAnswer:\n"
+  response_template: "{response}"
+  train_on_prompt: false
+  seq_length: 512
+  min_response_tokens: 16
+
+experiment:
+  notes: MetaMathQA local split preset

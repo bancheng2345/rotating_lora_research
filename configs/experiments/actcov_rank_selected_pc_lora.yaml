@@ -1,0 +1,31 @@
+lora:
+  method: actcov_rank_pc_lora
+  target_layers: [0, 8, 16, 24]
+  rank: 8
+  alpha: 16
+  alpha_strategy: rank_scaled
+  alpha_multiplier: 2.0
+  # ActivationCov is used only as an allocation signal here, not as a hard
+  # projection. v_proj received more rank because the probe showed larger
+  # activation-energy mismatch between ActivationCov and SVD directions.
+  rank_pattern:
+    model.layers.0.self_attn.q_proj: 4
+    model.layers.8.self_attn.q_proj: 4
+    model.layers.16.self_attn.q_proj: 4
+    model.layers.24.self_attn.q_proj: 4
+    model.layers.0.self_attn.v_proj: 14
+    model.layers.8.self_attn.v_proj: 14
+    model.layers.16.self_attn.v_proj: 14
+    model.layers.24.self_attn.v_proj: 14
+  left_projection_source: none
+  right_projection_source: svd
+  use_left_projection: false
+  use_right_projection: true
+  use_capture_loss: true
+  capture_space: residual
+  capture_weighting: none
+  lambda_cap: 0.05
+  lambda_orth: 0.01
+
+experiment:
+  notes: SVD-right preserve + ActivationCov rank allocation + PC residual capture

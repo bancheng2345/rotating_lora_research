@@ -1,0 +1,29 @@
+lora:
+  method: fisher_oplora
+  target_layers: [0, 8, 16, 24]
+  left_projection_source: none
+  right_projection_source: fisher
+  projection_basis_dir: outputs/directions/fisher/llama31_8b_commonsense_probe_layers
+  use_left_projection: false
+  use_right_projection: true
+  use_capture_loss: false
+  capture_space: residual
+  capture_weighting: none
+  lambda_cap: 0.0
+  lambda_orth: 0.01
+
+projection_directions:
+  output_dir: outputs/directions/fisher/llama31_8b_commonsense_probe_layers
+  target_layers: [0, 8, 16, 24]
+  target_modules: ["q_proj", "v_proj"]
+  top_k_values: [4, 8, 16, 32]
+  max_samples: 128
+  batch_size: 1
+  max_batches: 32
+  max_tokens: 4096
+  eig_method: randomized
+  oversample: 8
+  power_iterations: 2
+
+experiment:
+  notes: Empirical-Fisher right-projected OPLoRA matched to probe layers

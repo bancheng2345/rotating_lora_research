@@ -1,0 +1,15 @@
+lora:
+  method: lora
+  target_layers: [0, 8, 16, 24]
+  left_projection_source: none
+  right_projection_source: none
+  use_left_projection: false
+  use_right_projection: false
+  use_capture_loss: false
+  capture_space: full
+  capture_weighting: none
+  lambda_cap: 0.0
+  lambda_orth: 0.01
+
+experiment:
+  notes: LoRA baseline matched to ActivationCov probe layers

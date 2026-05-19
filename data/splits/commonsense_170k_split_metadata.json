@@ -1,0 +1,9 @@
+{
+  "seed": 42,
+  "source_file": "/data/zck/code/rotating_lora_research/data/commonsense_170k/data/train-00000-of-00001.parquet",
+  "total_rows": 170420,
+  "train_path": "/data/zck/code/rotating_lora_research/data/splits/commonsense_170k_train_165420.jsonl",
+  "train_rows": 165420,
+  "val_path": "/data/zck/code/rotating_lora_research/data/splits/commonsense_170k_val_5000.jsonl",
+  "val_rows": 5000
+}

@@ -1,0 +1,9 @@
+{
+  "task": "arc_e",
+  "split": "validation",
+  "dataset_name": "ai2_arc",
+  "dataset_config": "ARC-Easy",
+  "num_examples": 570,
+  "num_skipped": 0,
+  "output_path": "data/commonsense_eval/arc_e/validation.jsonl"
+}

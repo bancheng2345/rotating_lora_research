@@ -1,0 +1,18 @@
+lora:
+  method: svd_preserve_only
+  target_layers: [0, 8, 16, 24]
+  left_projection_source: none
+  right_projection_source: svd
+  use_left_projection: false
+  use_right_projection: true
+  use_capture_loss: false
+  capture_space: residual
+  capture_weighting: none
+  lambda_cap: 0.0
+  use_capture_alignment_loss: false
+  lambda_align: 0.0
+  lambda_orth: 0.01
+
+experiment:
+  notes: SVD-right preserve only, matched to MetaMathQA probe layers
+

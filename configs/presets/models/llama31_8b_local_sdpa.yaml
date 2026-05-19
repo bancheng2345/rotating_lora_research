@@ -1,0 +1,10 @@
+model:
+  init_from_scratch: false
+  name_or_path: /data/zck/code/models/models--meta-llama--Llama-3.1-8B/snapshots/d04e592bb4f6aa9cfee91e2e20afa771667e1d4b
+  tokenizer_name_or_path: /data/zck/code/models/models--meta-llama--Llama-3.1-8B/snapshots/d04e592bb4f6aa9cfee91e2e20afa771667e1d4b
+  local_files_only: true
+  torch_dtype: bf16
+  attn_impl: sdpa
+
+experiment:
+  notes: local Llama-3.1-8B preset with SDPA attention

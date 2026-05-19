@@ -1,0 +1,17 @@
+lora:
+  method: pc_lora
+  projection_rank_k: 16
+  use_left_projection: true
+  use_right_projection: true
+  use_capture_loss: true
+  capture_space: residual
+  capture_weighting: none
+  lambda_cap: 0.05
+  lambda_orth: 0.01
+
+experiment:
+  notes: projection rank k sweep template
+
+sweep:
+  projection_rank_values: [8, 16, 32, 64, 128]
+

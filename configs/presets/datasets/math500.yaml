@@ -1,0 +1,18 @@
+training:
+  dataset_name: math500_local
+  train_file: data/splits/math500_train_450.jsonl
+  eval_file: data/splits/math500_val_50.jsonl
+  domain: math
+  eval_domain: math
+  task_type: causal_lm
+  eval_metric_name: exact_match
+  eval_metric_mode: max
+  prompt_column: question
+  response_column: answer
+  prompt_template: "Question:\n{question}\n\nAnswer:\n"
+  response_template: "{answer}"
+  train_on_prompt: false
+  seq_length: 256
+
+experiment:
+  notes: Math500 local split preset

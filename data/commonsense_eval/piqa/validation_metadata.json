@@ -1,0 +1,9 @@
+{
+  "task": "piqa",
+  "split": "validation",
+  "dataset_name": "piqa",
+  "dataset_config": null,
+  "num_examples": 1838,
+  "num_skipped": 0,
+  "output_path": "data/commonsense_eval/piqa/validation.jsonl"
+}
